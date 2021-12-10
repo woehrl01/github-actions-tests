@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -  run: |
-          $GITHUB_ENV << EOF
+          cat << EOF >> $GITHUB_ENV
           WORLD=$HALLO
           EOF
           
