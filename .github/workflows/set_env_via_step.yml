@@ -1,0 +1,21 @@
+name: "ENVs set custom name via step"
+
+on:
+  push:
+
+env:
+  HALLO: world
+  
+ 
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      -  run: |
+          cat << EOF >> $GITHUB_ENV
+          WORLD=$HALLO
+          EOF
+          
+      -  run: |
+          echo "Hello $WORLD"
+
