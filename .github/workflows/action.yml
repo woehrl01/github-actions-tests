@@ -9,8 +9,10 @@ env:
  
 jobs:
   job1:
+    runs-on: ubuntu-latest
     env:
       WORLD: ${{ env.HALLO }}
     steps:
-      - run: >
-          echo "Hello $WORLD"
+      -  name: Test envs
+         run: echo "Hello $WORLD"
+
