@@ -1,0 +1,16 @@
+name: "Test ENVs"
+
+on:
+  push:
+
+env:
+  HALLO: World
+  
+ 
+jobs:
+  job1:
+    env:
+      WORLD: ${{ env.HALLO }}
+    steps:
+      - run: >
+          echo "Hello $WORLD"
