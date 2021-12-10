@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  HALLO: World
+  HALLO: world
   
  
 jobs:
@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -  run: |
-          echo "WORLD=$HALLO" >> $GITHUB_ENV
+          $GITHUB_ENV << EOF
+          WORLD=$HALLO
+          EOF
           
       -  run: |
           echo "Hello $WORLD"
