@@ -10,9 +10,10 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    env:
-      WORLD: ${{ env.HALLO }}
     steps:
-      -  name: Test envs
-         run: echo "Hello $WORLD"
+      -  run: |
+          echo "WORLD=$HALLO" >> $GITHUB_ENV
+          
+      -  run: |
+          echo "Hello $WORLD"
 
